@@ -38,7 +38,6 @@ namespace Company.API.DataLayer.Layers
             var result = _context.SaveChanges();
             return result;
         }
-
         public int UpdateDrink(Drink drink, DrinkType type)
         {
             if (drink.Type != type)

@@ -9,7 +9,7 @@ namespace Company.API.DataLayer.DTO
         [Key]
         public int Id { get; set; }
         public string Login { get; set; }
-        public string Password { get; set; }
+        public byte[] Password { get; set; }
         public List<UserPrivileges> Privileges { get; set; }
     }
 }
