@@ -7,8 +7,8 @@ namespace Company.API.DataLayer.Interfaces
     {
         public IEnumerable<Drink> GetAllDrinks();
         public Drink GetDrinkById(int id);
-        public int InsertDrink(Drink drink, DrinkType type);
-        public int UpdateDrink(Drink drink, DrinkType type);
-        public int DeleteDrink(int id, DrinkType type);
+        public int InsertDrink(Drink drink);
+        public int UpdateDrink(Drink drink);
+        public int DeleteDrink(int id);
     }
 }

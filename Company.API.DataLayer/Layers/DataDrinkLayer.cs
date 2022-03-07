@@ -26,9 +26,9 @@ namespace Company.API.DataLayer.Layers
             return drinkFromDatabase;
         }
 
-        public int InsertDrink(Drink drink, DrinkType type)
+        public int InsertDrink(Drink drink)
         {
-            if (drink.Type != type)
+            if (drink.Type != _type)
             {
                 return -1;
             }
@@ -38,9 +38,9 @@ namespace Company.API.DataLayer.Layers
             var result = _context.SaveChanges();
             return result;
         }
-        public int UpdateDrink(Drink drink, DrinkType type)
+        public int UpdateDrink(Drink drink)
         {
-            if (drink.Type != type)
+            if (drink.Type != _type)
             {
                 return -1;
             }
@@ -59,10 +59,10 @@ namespace Company.API.DataLayer.Layers
 
         }
 
-        public int DeleteDrink(int id, DrinkType type)
+        public int DeleteDrink(int id)
         {
             using var transaction = _context.Database.BeginTransaction();
-            var drink = _context.Drinks.Where(x => x.Id == id && x.Type == type).SingleOrDefault();
+            var drink = _context.Drinks.Where(x => x.Id == id && x.Type == _type).SingleOrDefault();
             if (drink != null)
             {
                 _context.Drinks.Remove(drink);
